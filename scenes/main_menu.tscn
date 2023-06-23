@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://j05nykrnaag5"]
+[gd_scene load_steps=2 format=3 uid="uid://j05nykrnaag5"]
+
+[ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_6td36"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_6td36")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -93,3 +96,7 @@ text = "Join Server"
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Start Game"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/HostServer" to="." method="_on_host_server_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/JoinServer" to="." method="_on_join_server_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/StartGame" to="." method="_on_start_game_pressed"]

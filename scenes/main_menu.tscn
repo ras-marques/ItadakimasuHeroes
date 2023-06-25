@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://j05nykrnaag5"]
 
-[ext_resource type="Script" path="res://scenes/main_menu.gd" id="1_6td36"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_6td36"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -33,7 +33,22 @@ size_flags_stretch_ratio = 10.68
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="ServerON" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 10
+size_flags_stretch_ratio = 20.0
+text = "You are the server.
+Tell other players to use this IP:"
+
+[node name="ServerIP" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 10
+text = "192.168.1.105"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
@@ -76,6 +91,7 @@ text = "Name"
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 3.0
+text = "Player"
 placeholder_text = "Player"
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
@@ -95,6 +111,7 @@ text = "Join Server"
 [node name="StartGame" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 3
+disabled = true
 text = "Start Game"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/HBoxContainer2/HostServer" to="." method="_on_host_server_pressed"]
